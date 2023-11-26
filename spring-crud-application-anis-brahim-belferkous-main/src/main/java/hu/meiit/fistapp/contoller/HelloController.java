@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller //for enumerating methods
-
-
 public class HelloController {
 
     @RequestMapping(path = "/main",method = RequestMethod.GET)   //mapping from
