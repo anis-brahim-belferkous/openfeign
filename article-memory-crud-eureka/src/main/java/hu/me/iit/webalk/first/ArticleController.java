@@ -15,12 +15,13 @@ public class ArticleController {
 	public ArticleController(ArticleService articleService) {
 		this.articleService = articleService;
 	}
+
 	@GetMapping(path="", produces= MediaType.APPLICATION_JSON_VALUE)
 	public List<ArticleDto> allArticles() {
 		log.info("allArticles");
 		return articleService.findAll();
 	}
-	@PostMapping(path="")
+	@PostMapping(path="/")
 	public void newArticle(@RequestBody @Valid ArticleDto articleDto) {
 		articleService.save(articleDto);
 	}
