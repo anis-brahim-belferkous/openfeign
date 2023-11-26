@@ -1,7 +1,6 @@
-package hu.meiit.fistapp.contoller;
+package hu.me.iit.distributedsystems.openfeignclient;
 
-import hu.meiit.fistapp.repository.subject;
-import hu.meiit.fistapp.service.subjectVO;
+//import hu.meiit.fistapp.service.subjectVO;
 import lombok.Data;
 
 @Data
@@ -14,7 +13,5 @@ public class subjectDto {
     private final String faculty;
     private final String description;
 
-
-
-    public subjectVO toVO(){return new subjectVO(id,credits,name,teacher,faculty,description);}
+    //public subjectVO toVO(){return new subjectVO(id,credits,name,teacher,faculty,description);}
 }

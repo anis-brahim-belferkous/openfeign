@@ -15,5 +15,7 @@ public class StudentDto {
     private final Long studentID;
     private final Integer Gpa;
 
+
+
     public StudentVO toVO() { return new StudentVO(id, FullName, Speciality, studentID, Gpa); }
 }

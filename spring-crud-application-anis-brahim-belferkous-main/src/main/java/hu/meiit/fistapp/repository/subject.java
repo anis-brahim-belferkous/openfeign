@@ -19,7 +19,6 @@ public class subject {
     private Long id;
     private Integer credits;
     private String name;
-
     private String teacher;
     private String faculty;
     private String description;

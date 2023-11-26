@@ -10,6 +10,8 @@ import java.util.List;
 public class ComplexController {
     private static final int BIG_BOOK_PAGE_THRESHOLD = 100;
     private final ArticlesClient articlesClient;
+    private final subjectClient subjectClient;
+
 
     @GetMapping("find-all-big-book")
     List<ArticleDto> findAllBigBook() {
@@ -17,4 +19,11 @@ public class ComplexController {
                 .filter(article -> article.getPages() > BIG_BOOK_PAGE_THRESHOLD)
                 .toList();
     }
+
+    @GetMapping("find-all-subjects")
+    List<subjectDto> findAllSubjects() {
+        return subjectClient.findAllSubjects().stream().toList();
+    }
+
+
 }

@@ -32,6 +32,7 @@ public class ArticleMemoryRepository implements ArticleRepository {
         return articleByIdIndex == -1 ? null : articles.get(articleByIdIndex);
     }
 
+
     @Override
     public Long save(ArticleDto articleDto) {
         int found = findArticleById(articleDto.getId());
