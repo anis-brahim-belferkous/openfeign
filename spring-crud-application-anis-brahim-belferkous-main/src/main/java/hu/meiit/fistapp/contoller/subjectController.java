@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -15,7 +17,7 @@ public class subjectController {
     public final subjectService subjectService;
 
     @GetMapping(path="", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<subject> findAllSubjects() {
+    public List<subject> findAllSubjects() {
         log.info("All subjects");
         return subjectService.findAll();
     }

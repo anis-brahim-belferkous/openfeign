@@ -11,7 +11,7 @@ public interface subjectClient {
 
 
     @GetMapping(path="/subjects", produces= MediaType.APPLICATION_JSON_VALUE)
-    Iterable<subjectDto> findAllSubjects();
+    List<subjectDto> findAllSubjects();
 
     @PostMapping("/subjects")
     subjectDto insertSubject(@RequestBody subjectDto subject);

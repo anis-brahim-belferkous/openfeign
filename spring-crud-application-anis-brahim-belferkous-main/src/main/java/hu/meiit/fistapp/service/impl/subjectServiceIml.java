@@ -6,10 +6,14 @@ import hu.meiit.fistapp.service.subjectVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class subjectServiceIml implements hu.meiit.fistapp.service.subjectService {
     private  final subjectRepository SubjectRepo;
+
+
     @Override
     public Long insertSubject(subjectVO sub) {
         subject newSubject = SubjectRepo.save(sub.toEntity());
@@ -37,15 +41,11 @@ public class subjectServiceIml implements hu.meiit.fistapp.service.subjectServic
         SubjectRepo.deleteById(ID);
         return ID;
     }
-/*
-    @Override
-    public String findAllSubjects() {
-        return SubjectRepo.findAll().toString();
-    }*/
+
 
     @Override
-    public Iterable<subject> findAll() {
-        return SubjectRepo.findAll();
+    public List<subject> findAll() {
+        return (List<subject>) SubjectRepo.findAll();
     }
 
 

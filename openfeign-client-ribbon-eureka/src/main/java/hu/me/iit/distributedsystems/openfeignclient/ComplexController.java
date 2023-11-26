@@ -2,9 +2,13 @@ package hu.me.iit.distributedsystems.openfeignclient;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
+import static javax.swing.text.html.parser.DTDConstants.ID;
+
 @RestController
 @RequiredArgsConstructor
 public class ComplexController {
@@ -21,9 +25,10 @@ public class ComplexController {
     }
 
     @GetMapping("find-all-subjects")
-    Iterable<subjectDto> findAllSubjects() {
-        return subjectClient.findAllSubjects();
+    List<subjectDto> findAllSubjects() {
+        return  subjectClient.findAllSubjects();
     }
+
 
 
 }
