@@ -1,20 +1,15 @@
 package hu.meiit.fistapp.service.impl;
 
-import hu.meiit.fistapp.contoller.subjectDto;
 import hu.meiit.fistapp.repository.subject;
 import hu.meiit.fistapp.repository.subjectRepository;
-import hu.meiit.fistapp.service.subjectService;
 import hu.meiit.fistapp.service.subjectVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @Service
 public class subjectServiceIml implements hu.meiit.fistapp.service.subjectService {
     private  final subjectRepository SubjectRepo;
-    private final subjectService subjectService;
     @Override
     public Long insertSubject(subjectVO sub) {
         subject newSubject = SubjectRepo.save(sub.toEntity());
@@ -49,8 +44,8 @@ public class subjectServiceIml implements hu.meiit.fistapp.service.subjectServic
     }*/
 
     @Override
-    public List<subjectDto> findAll() {
-        return subjectService.findAll();
+    public Iterable<subject> findAll() {
+        return SubjectRepo.findAll();
     }
 
 

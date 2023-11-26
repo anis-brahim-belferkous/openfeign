@@ -21,8 +21,8 @@ public class ComplexController {
     }
 
     @GetMapping("find-all-subjects")
-    List<subjectDto> findAllSubjects() {
-        return subjectClient.findAllSubjects().stream().toList();
+    Iterable<subjectDto> findAllSubjects() {
+        return subjectClient.findAllSubjects();
     }
 
 

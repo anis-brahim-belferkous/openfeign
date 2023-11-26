@@ -1,9 +1,6 @@
 package hu.meiit.fistapp.service;
 
-import hu.meiit.fistapp.contoller.subjectDto;
 import hu.meiit.fistapp.repository.subject;
-
-import java.util.List;
 
 public interface subjectService {
 
@@ -14,5 +11,5 @@ public interface subjectService {
      Long UpdateSubject(subjectVO subject, Long ID);
      Long DeleteSubject(Long ID);
 
-     List<subjectDto> findAll();
+     Iterable<subject> findAll();
 }
