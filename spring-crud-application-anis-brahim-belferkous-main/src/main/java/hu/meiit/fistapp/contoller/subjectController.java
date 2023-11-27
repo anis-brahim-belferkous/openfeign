@@ -2,7 +2,6 @@ package hu.meiit.fistapp.contoller;
 
 import hu.meiit.fistapp.repository.subject;
 import hu.meiit.fistapp.service.subjectService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -11,14 +10,17 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequiredArgsConstructor
+@RequestMapping(path="subject")
 public class subjectController {
 
     public final subjectService subjectService;
+    public subjectController(subjectService subjectService) {
+        this.subjectService = subjectService;
+    }
 
     @GetMapping(path="", produces= MediaType.APPLICATION_JSON_VALUE)
-    public List<subject> findAllSubjects() {
-        log.info("All subjects");
+    public List<subjectDto> findAllSubjects() {
+        log.info("All_subjects");
         return subjectService.findAll();
     }
 

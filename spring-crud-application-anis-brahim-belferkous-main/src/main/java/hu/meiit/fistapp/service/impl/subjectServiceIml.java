@@ -1,17 +1,26 @@
 package hu.meiit.fistapp.service.impl;
 
+import hu.meiit.fistapp.contoller.subjectDto;
 import hu.meiit.fistapp.repository.subject;
 import hu.meiit.fistapp.repository.subjectRepository;
+import hu.meiit.fistapp.repository.subjectRepository_without_crud;
 import hu.meiit.fistapp.service.subjectVO;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@RequiredArgsConstructor
-@Service
+//@RequiredArgsConstructor
+//@Service
+@Component
 public class subjectServiceIml implements hu.meiit.fistapp.service.subjectService {
     private  final subjectRepository SubjectRepo;
+
+    private final subjectRepository_without_crud subjectRepository;
+
+    public subjectServiceIml(hu.meiit.fistapp.repository.subjectRepository subjectRepo, subjectRepository_without_crud subjectRepository) {
+        this.SubjectRepo = subjectRepo;
+        this.subjectRepository = subjectRepository;
+    }
 
 
     @Override
@@ -44,8 +53,8 @@ public class subjectServiceIml implements hu.meiit.fistapp.service.subjectServic
 
 
     @Override
-    public List<subject> findAll() {
-        return (List<subject>) SubjectRepo.findAll();
+    public List<subjectDto> findAll() {
+        return subjectRepository.findAll();
     }
 
 
