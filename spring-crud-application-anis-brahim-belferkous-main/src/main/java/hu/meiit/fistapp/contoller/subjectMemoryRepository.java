@@ -15,7 +15,23 @@ public class subjectMemoryRepository implements subjectRepository_without_crud {
         return subject;
     }
 
+    @Override
+    public Long save(subjectDto subjectDto) {
+        int found = findSubjectById(subjectDto.getId());
 
+        if (found != -1) {
+            subjectDto foundArticle = subject.get(found);
+            foundArticle.setName(subjectDto.getName());
+            foundArticle.setCredits(subjectDto.getCredits());
+            foundArticle.setDescription(subjectDto.getDescription());
+            foundArticle.setId(subjectDto.getId());
+
+            foundArticle.setTeacher(subjectDto.getTeacher());
+        } else {
+            subject.add(subjectDto);
+        }
+        return null;
+    }
 
     @Override
     public subjectDto getById(Long id) {

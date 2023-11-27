@@ -10,6 +10,8 @@ public interface subjectRepository_without_crud {
     List<subjectDto> findAll();
     int findSubjectById(Long id);
 
+    Long save(subjectDto subjectDto);
+
     subjectDto getById(Long id);
 
 }

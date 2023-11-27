@@ -13,6 +13,9 @@ import static javax.swing.text.html.parser.DTDConstants.ID;
 @RequiredArgsConstructor
 public class ComplexController {
     private static final int BIG_BOOK_PAGE_THRESHOLD = 100;
+
+    private static final int CREDITS_THRESHOLD = 4;
+
     private final ArticlesClient articlesClient;
     private final subjectClient subjectClient;
 
@@ -26,7 +29,9 @@ public class ComplexController {
 
     @GetMapping("find-all-subjects")
     List<subjectDto> findAllSubjects() {
-        return  subjectClient.findAllSubjects();
+        return  subjectClient.findAllSubjects().stream()
+                .filter(subject -> subject.getCredits() >= CREDITS_THRESHOLD)
+                .toList();
     }
 
 

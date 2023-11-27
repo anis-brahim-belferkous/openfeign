@@ -1,20 +1,22 @@
 package hu.meiit.fistapp.contoller;
 
-import hu.meiit.fistapp.repository.subject;
 import hu.meiit.fistapp.service.subjectVO;
 import lombok.Data;
 
 import java.util.Objects;
 
+/**
+ * The type Subject dto.
+ */
 @Data
 public class subjectDto {
 
-    private final Long id;
-    private final Integer credits;
-    private final String name;
-    private final String teacher;
-    private final String faculty;
-    private final String description;
+    private  Long id;
+    private  Integer credits;
+    private  String name;
+    private  String teacher;
+    private  String faculty;
+    private  String description;
 
     @Override
     public String toString() {
@@ -40,5 +42,12 @@ public class subjectDto {
         return Objects.hash(getId(), getCredits(), getName(), getTeacher(), getFaculty(), getDescription());
     }
 
+    /**
+     * To vo subject vo.
+     *
+     * @return the subject vo
+     */
     public subjectVO toVO(){return new subjectVO(id,credits,name,teacher,faculty,description);}
+
+
 }

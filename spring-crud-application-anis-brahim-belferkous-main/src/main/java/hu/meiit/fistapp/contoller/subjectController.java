@@ -2,6 +2,7 @@ package hu.meiit.fistapp.contoller;
 
 import hu.meiit.fistapp.repository.subject;
 import hu.meiit.fistapp.service.subjectService;
+import hu.meiit.fistapp.service.subjectVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class subjectController {
         return subjectService.findAll();
     }
 
-    @PostMapping(path = "/subject")
+    @PostMapping(path = "/subjecta")
     public Long insertSubject(@RequestBody subjectDto subjectDto){
         return subjectService.insertSubject(subjectDto.toVO());
     }
