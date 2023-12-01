@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "subject-service")
+@FeignClient(name = "neptunApp")
 public interface subjectClient {
 
 

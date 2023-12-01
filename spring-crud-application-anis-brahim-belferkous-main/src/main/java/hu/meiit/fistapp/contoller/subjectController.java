@@ -25,7 +25,7 @@ public class subjectController {
         return subjectService.findAll();
     }
 
-    @PostMapping(path = "/subjecta")
+    @PostMapping(path = "")
     public Long insertSubject(@RequestBody subjectDto subjectDto){
         return subjectService.insertSubject(subjectDto.toVO());
     }
