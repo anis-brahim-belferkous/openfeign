@@ -19,8 +19,8 @@ public class subjectController {
         this.subjectService = subjectService;
     }
 
-    @GetMapping(path="", produces= MediaType.APPLICATION_JSON_VALUE)
-    public List<subjectDto> findAllSubjects() {
+    @GetMapping(path="")
+    public List<subject> findAllSubjects() {
         log.info("All_subjects");
         return subjectService.findAll();
     }

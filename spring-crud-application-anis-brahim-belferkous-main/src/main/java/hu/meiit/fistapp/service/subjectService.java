@@ -14,5 +14,5 @@ public interface subjectService {
      Long UpdateSubject(subjectVO subject, Long ID);
      Long DeleteSubject(Long ID);
 
-     List<subjectDto> findAll();
+     List<subject> findAll();
 }

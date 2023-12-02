@@ -10,7 +10,7 @@ import java.util.List;
 public interface subjectClient {
 
 
-    @GetMapping(path="/subjects", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path="/subject", produces= MediaType.APPLICATION_JSON_VALUE)
     List<subjectDto> findAllSubjects();
 
     @PostMapping("/subjects")

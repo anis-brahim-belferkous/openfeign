@@ -53,8 +53,8 @@ public class subjectServiceIml implements hu.meiit.fistapp.service.subjectServic
 
 
     @Override
-    public List<subjectDto> findAll() {
-        return subjectRepository.findAll();
+    public List<subject> findAll() {
+        return (List<subject>) SubjectRepo.findAll();
     }
 
 
